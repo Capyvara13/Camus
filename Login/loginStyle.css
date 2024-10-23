@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dce6f1;
+  }
+  
+  #imgLogo {
+    height: 40%;
+    width: 75%;
+  }
+  
+  #box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    background-color: #eee0e0;
+    height: 55vh;
+    width: 30vw;
+    position: fixed;
+    top: 25vh;
+    border-radius: 1vw;
+    border: solid #1e3964;
+  }
+  
+  #label1 {
+    color: #1e3964;
+    font-size: 1vw;
+    margin-left: 1vw;
+  }
+  
+  #label2 {
+    color: #1e3964;
+    margin-left: 1vw;
+    font-size: 1vw;
+  }
+  
+  #username {
+    height: 4vh;
+    width: 24.8vw;
+    border: none;
+    border-bottom: 0.13vw solid #1e3964;
+    background-color: transparent;
+    font-size: 1vw;
+    margin-left: 1vw;
+  }
+  
+  #password {
+    height: 4vh;
+    width: 26.2vw;
+    border: none;
+    border-bottom: 0.13vw solid #1e3964;
+    font-size: 1vw;
+    background-color: transparent;
+    margin-left: 1vw;
+  }
+  
+  #LoginB {
+    height: 4vh;
+    width: 5vw;
+    background-color: transparent;
+    border: solid #1e3964;
+    color: #1e3964;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 1vw;
+  }
+  
+  #LoginB:hover {
+    background-color: #1e3964;
+    color: #dce6f1;
+  }
+  
+  #box a {
+    color: #1e3964;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1vw;
+  }
+  
+  #username:focus {
+    border: none;
+    border-bottom: 0.13vw solid #5e7dad;
+    background-color: #eee0e0;
+    outline: none;
+  }
+  
+  #password:focus {
+    border: none;
+    border-bottom: 0.13vw solid #5e7dad;
+    background-color: #eee0e0;
+    outline: none;
+  }
+  #ShowPassword {
+    height: 80%;
+    width: 8%;
+    cursor: pointer;
+    background-image: url(../img/LoginPage/olho\ fechado.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+  }
+  #usernameDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  #passwordDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+  }
+  #login-singin {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 1vw;
+  }
+  
+  #spanPassword {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  /*Style para tablet*/
+  @media screen and (max-width: 768px) {
+    #box {
+      height: 70vh;
+      width: 65vw;
+      top: 19vh;
+      gap: 4vh;
+    }
+    #label1 {
+      margin-left: 5vw;
+      font-size: 2vw;
+    }
+  
+    #label2 {
+      margin-left: 5vw;
+      font-size: 2vw;
+    }
+  
+    #username {
+      height: 4vh;
+      width: 51.5vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #password {
+      height: 4vh;
+      width: 55vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #LoginB {
+      height: 4vh;
+      width: 10vw;
+      font-size: 2vh;
+      margin-right: 1vw;
+    }
+  
+    #box a {
+      font-size: 2vh;
+    }
+  }
+  
+  /*Style para Mobile*/
+  @media screen and (max-width: 425px) {
+    #box {
+      height: 60vh;
+      width: 80vw;
+    }
+  
+    #imgLogo {
+      height: 30%;
+      width: 75%;
+    }
+  
+    #username {
+      height: 4vh;
+      width: 65vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #password {
+      height: 4vh;
+      width: 69vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #LoginB {
+      height: 4vh;
+      width: 14vw;
+      font-size: 2vh;
+      margin-right: 1vw;
+    }
+  }
+  
+  /*Style para Mobile Small*/
+  @media screen and (max-width: 320px) {
+    #username {
+      height: 4vh;
+      width: 63vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #password {
+      height: 4vh;
+      width: 63vw;
+      margin-left: 5vw;
+      font-size: 2.5vh;
+    }
+  
+    #LoginB {
+      height: 4vh;
+      width: 18vw;
+      font-size: 2vh;
+      margin-right: 1vw;
+    }
+  
+    #ShowPassword {
+      width: 8vw;
+    }
+  }
+  
