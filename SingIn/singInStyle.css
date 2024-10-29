@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dce6f1;
+  }
+
+  #singInBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    background-color: #eee0e0;
+    height: 75vh;
+    width: 40vw;
+    position: fixed;
+    top: 15vh;
+    border-radius: 1vw;
+    border: solid #1e3964;
+  }
+
+  label {
+    color: #1e3964;
+    margin-left: 1vw;
+    font-size: 1vw;
+  }
+
+  input {
+    height: 4vh;
+    width: 24.8vw;
+    border: none;
+    border-bottom: 0.13vw solid #1e3964;
+    background-color: transparent;
+    font-size: 1vw;
+    margin-left: 1vw;
+  }
+
+  input:focus {
+    border: none;
+    border-bottom: 0.13vw solid #5e7dad;
+    background-color: #eee0e0;
+    outline: none;
+  }
