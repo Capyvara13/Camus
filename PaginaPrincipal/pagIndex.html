@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../PaginaPrincipal/paStyle.css">
     <title>Camus - Página Inicial</title>
 </head>
+
 <body>
     <nav>
         <div id="leftSide">
             <img src="../camus icon.png" alt="Camus Icon" id="camusIcon">
         </div>
         <div id="rightSide">
-            <button id="singInButton">Registrar-se</button>
-            <button id="loginButton">Entrar</button>
+            <a href="../SingIn/singInIndex.html"><button id="singInButton" class="menuButton">Registrar-se</button></a>
+            <a href="../Login/loginIndex.html"><button id="loginButton" class="menuButton">Entrar</button></a>
         </div>
     </nav>
 
     <section id="section1">
         <div id="leftSideSec1">
-            <h1>Sua música,</h1>
-            <h1>Explicada</h1>
+            <span>
+                <h1>Sua música,</h1>
+                <h1>Explicada</h1>
+            </span>
 
             <button id="SaibaMais">Saiba mais</button>
         </div>
@@ -28,17 +32,36 @@
     </section>
 
     <section id="section2">
-        <h1>O <span style="color: #8e2625;">Camus</span> é um site para desvendar os segredos da sua música favorita.</h1>
-        <p>Mergulhe no universo das letras e descubra os significados por trás das suas músicas favoritas. Explore análises profundas, curiosidades e o contexto histórico de cada canção.</p>
+        <h1>O <span style="color: #8e2625;">Camus</span> é um site para desvendar os segredos da sua música favorita.
+        </h1>
+        <p>Mergulhe no universo das letras e descubra os significados por trás das suas músicas favoritas. Explore
+            análises profundas, curiosidades e o contexto histórico de cada canção.</p>
     </section>
 
     <section id="section3">
-        <h1 style="color: #8e2625;">Sobre</h1>
-        <p>No Camus, você encontra análises profundas, curiosidades e o contexto histórico de cada canção. 
+        <div id="LeftSideSec3">
+            <h1 style="color: #8e2625;">Sobre</h1>
+            <p>No Camus, você encontra análises profundas, curiosidades e o contexto histórico de cada canção.</p>
 
-            <br>Mas não para por aí! Você também pode criar seus próprios artigos e compartilhar suas ideias com a comunidade. 
-            
-            <br>Junte-se a nós e ajude a construir um espaço onde a música é celebrada, debatida e compreendida de forma mais profunda.</p>
+            <p>Mas não para por aí! Você também pode criar seus próprios artigos e compartilhar suas ideias com a
+                comunidade.</p>
+
+            <p>Junte-se a nós e ajude a construir um espaço onde a música é celebrada, debatida e compreendida de
+                forma mais profunda.</p>
+        </div>
+        <div id="section3img">
+            <img src="../img/PaginaPrincipal/sobrenotes.PNG"
+                alt="Notas Musicais em um circulo com interrogação no centro.">
+        </div>
     </section>
+
+    <script>
+        document.getElementById('SaibaMais').addEventListener('click', function() {
+            document.getElementById('section2').scrollIntoView({ 
+                behavior: 'smooth' // Adiciona um efeito suave
+            });
+        });
+    </script>
 </body>
+
 </html>
