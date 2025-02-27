@@ -1,0 +1,20 @@
+//Import
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+//CSS
+.irish-grover-regular {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+//Import
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Irish+Grover&display=swap');
+
+//CSS
+.inria-serif-light {
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+}

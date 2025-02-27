@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Irish+Grover&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    transition: 0.3s;
+}
+
+body {
+    background-color: #F0F0F0;
+}
+
+#Nome {
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #CDB73A;
+    font-size: 8vh;
+}
+
+#logo {
+    height: 8vh;
+    margin-left: 1vw;
+}
+
+#navNew {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+#leftSide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+    width: 50%;
+    gap: 1vw;
+}
+
+#rightSide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    width: 50%;
+    gap: 2vw;
+}
+
+.buttonNav {
+    color: #6F6F6F;
+    text-decoration: none;
+    font-size: 4vh;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+}
+
+#buttonEntrar {
+    color: #FFFFFF;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #5E4B8A;
+    border: 0;
+    border-radius: 17px;
+    height: 5.5vh;
+    width: 10vw;
+    font-size: 4vh;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+nav {
+    height: 10vh;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 90vh;
+}
+
+#img {
+    height: 70vh;
+}
+
+article div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#title {
+    font-size: 5vh;
+    margin: 2vh;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#text {
+    font-size: 4vh;
+    width: 40vw;
+    margin: 1.5vw 2.5vw 2.5vw 2.5vw;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #6F6F6F;
+}
+
+#cadButton {
+    color: #FFFFFF;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #5E4B8A;
+    border: 0;
+    border-radius: 17px;
+    height: 4.5vh;
+    width: 14vw;
+    font-size: 3.5vh;
+    margin-left: 20vw;
+    cursor: pointer;
+}
+
+/*Hover*/
+.buttonNav:hover {
+    color: #5D00FD;
+    text-decoration: underline;
+}
+
+#buttonEntrar:hover, #cadButton:hover {
+    background-color: #5D00FD;
+}
+
+/*Laptop - 1024px*/
+@media screen and (max-width: 1024px) {
+    #img {
+        height: 50vh;
+    }
+
+    #cadButton {
+        width: 25vw;
+    }
+
+    #rightSide a {
+        margin-left: 2vw;
+    }
+}
+
+
+/*Tablet - 768px*/
+@media screen and (max-width: 768px) {
+    article {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 6vh;
+    }
+
+    #img {
+        margin-top: 2vh;
+        height: 40vh;
+    }
+
+    #cadButton {
+        width: 45vw;
+        margin-top: 3vh;
+    }
+
+    #text {
+        width: 80vw;
+    }
+
+    #logo {
+        position: absolute;
+        top: -200vh;
+    }
+
+    #rightSide #buttons  {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        width: 30vw;
+        background-color: rgba(0, 128, 0, 0.233);
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3vh;
+    }
+
+    /*Mobile menu click*/
+    #mobileBars {
+        position: fixed;
+        top: 0.5vh;
+        right: 2vw;
+        background-color: #D9D9D9;
+        width: 9vw;
+        height: 9vh;
+        border-radius: 50%;
+    }
+
+    .mobileBarsDiv {
+        background-color: #000000;
+        width: 6vw;
+        height: 1vh;
+        margin: 0.8vw;
+        position: relative;
+        border-radius: 3vw;
+        left: 0.7vw;
+        top: 1vh;
+    }
+    /*Mobile menu*/
+    #navNew {
+        background-color: firebrick;
+        height: 100vh;
+    }
+    
+    #leftSide {
+        justify-content: center;
+        width: 100%;
+
+        /*To menu*/
+        position: absolute;
+        top: 0vh;
+        background-color: green;
+    }
+
+    #rightSide {
+        background-color: #D9D9D9;
+        position: absolute;
+        width: 100vw;
+        height: 90vh;
+        bottom: 0vh;
+
+        /*To menu*/
+        background-color: pink;
+
+    }
+}
