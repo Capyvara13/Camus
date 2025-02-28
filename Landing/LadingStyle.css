@@ -181,6 +181,7 @@ article div {
         align-items: center;
         justify-content: flex-end;
         gap: 6vh;
+        margin-top: 9vh;
     }
 
     #img {
@@ -202,18 +203,6 @@ article div {
         top: -200vh;
     }
 
-    #rightSide #buttons  {
-        display: flex;
-        flex-direction: column;
-        height: 40vh;
-        width: 30vw;
-        background-color: rgba(0, 128, 0, 0.233);
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 3vh;
-    }
-
     /*Mobile menu click*/
     #mobileBars {
         position: fixed;
@@ -223,6 +212,7 @@ article div {
         width: 9vw;
         height: 9vh;
         border-radius: 50%;
+        visibility: visible;
     }
 
     .mobileBarsDiv {
@@ -237,29 +227,53 @@ article div {
     }
     /*Mobile menu*/
     #navNew {
-        background-color: firebrick;
         height: 100vh;
     }
     
     #leftSide {
+        background-color: #D9D9D9;
         justify-content: center;
         width: 100%;
 
         /*To menu*/
         position: absolute;
         top: 0vh;
-        background-color: green;
+        z-index: 1;
     }
 
     #rightSide {
         background-color: #D9D9D9;
         position: absolute;
         width: 100vw;
-        height: 90vh;
-        bottom: 0vh;
+        height: 90%;
+        bottom: 100vh;
 
         /*To menu*/
-        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        z-index: 0;
+    }
 
+    #buttons  {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        width: 30vw;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4.5vh;
+    }
+
+    #buttonEntrar {
+        width: 28vw;
+        height: 10vh;
+        font-size: 7vh;
+    }
+
+    .buttonNav {
+        font-size: 7vh;
     }
 }

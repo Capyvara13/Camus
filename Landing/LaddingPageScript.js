@@ -2,6 +2,8 @@ const bar1 = document.getElementById("bar1");
 const bar2 = document.getElementById("bar2");
 const bar3 = document.getElementById("bar3");
 const mobileBars = document.getElementById("mobileBars");
+const rightSide = document.getElementById("rightSide");
+const buttons = document.getElementById("buttons");
 
 var isClicked = false;
 
@@ -20,7 +22,9 @@ function clickAniMenu() {
         bar3.style.transform = "rotate(-50deg)";
         bar3.style.top = "-0.8vh";
 
-        console.log("click aberto"); 
+        rightSide.style.bottom = "0";
+
+        console.log("click aberto");
     } else if (isClicked) {
         bar1.classList.remove("bar1AnO");
         bar2.classList.remove("bar2AnO");
@@ -34,8 +38,10 @@ function clickAniMenu() {
         bar2.style.width = "6vw";
         bar3.style.transform = "rotate(0deg)";
         bar3.style.top = "1vh";
-        
-        console.log("click fechado"); 
+
+        rightSide.style.bottom = "100vh";
+
+        console.log("click fechado");
     }
 
     isClicked = !isClicked;
