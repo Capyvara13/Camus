@@ -1,6 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Irish+Grover&display=swap');
 
+
+/*Animações*/
+:root {
+    --Bar2Width: 6vw;
+}
+/*Keyframe open*/
+@keyframes bar1AnO {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes bar2AnO {
+    from {
+        width: var(--Bar2Width);
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes bar3AnO {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-50deg);
+    }
+}
+
+/*Keyframe close*/
+@keyframes bar1AnC {
+    from {
+        transform: rotate(50deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bar2AnC {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: var(--Bar2Width);
+    }
+}
+
+@keyframes bar3AnC {
+    from {
+        transform: rotate(-50deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/*Classe Open*/
+.bar1AnO {
+    animation: bar1AnO 0.3s linear;
+}
+
+.bar2AnO {
+    animation: bar2AnO 0.3s linear;
+}
+
+.bar3AnO {
+    animation: bar3AnO 0.3s linear;
+}
+
+/*Classe Close*/
+.bar1AnC {
+    animation: bar1AnC 0.3s linear;
+}
+
+.bar2AnC {
+    animation: bar2AnC 0.3s linear;
+}
+
+.bar3AnC {
+    animation: bar3AnC 0.3s linear;
+}
+
+/*Código*/
 * {
     padding: 0;
     margin: 0;
@@ -59,7 +147,17 @@ body {
     align-items: center;
     height: 10vh;
     width: 50%;
-    gap: 2vw;
+}
+
+#buttons {
+    width: 100%;
+    display: flex;
+    gap: 1vw;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .buttonNav {
@@ -113,7 +211,7 @@ article div {
 }
 
 #title {
-    font-size: 5vh;
+    font-size: 10vh;
     margin: 2vh;
     font-family: "Inria Serif", serif;
     font-weight: 300;
@@ -144,6 +242,7 @@ article div {
     margin-left: 20vw;
     cursor: pointer;
 }
+
 
 /*Hover*/
 .buttonNav:hover {
@@ -275,5 +374,56 @@ article div {
 
     .buttonNav {
         font-size: 7vh;
+    }
+}
+
+/*Mobile large - 425px*/
+@media screen and (max-width: 425px) {
+    .mobileBarsDiv {
+        width: 10vw;
+        left: -3vw;
+    }
+
+    #title {
+        font-size: 7vh;
+    }
+
+    #text {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    article div  {
+        display: flex;
+        align-items: center;
+    }
+
+    #cadButton {
+        margin: 2vh 0 2vh 0 ;
+    }
+
+    #buttonEntrar {
+        width: 50vw;
+    }
+
+}
+
+/*Mobile M - 375px*/
+@media screen and (max-width: 375px) {
+    #cadButton {
+        width: 80vw;
+    }
+}
+
+/*Mobile S - 320px*/
+@media screen and (max-width: 320px) {
+    #title {
+        font-size: 6vh;
+    }
+
+    #text {
+        font-size: 3vh;
+        text-align: justify;
     }
 }
