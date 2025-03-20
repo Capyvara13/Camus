@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/no image.png">
+    <link rel="icon" type="image/png" href="../Logo.png">
     <link rel="stylesheet" href="../CadPage/CadPageStyle.css">
     <title>Cadastrar-se - Camus</title>
 </head>
 <body>
-    
+    <form>
+        <div class="UpSide">
+            <p>Entrar com</p>
+            <div id="GoogleLogin"></div>
+        </div>
+
+        <div class="MidSide">
+           <label for="Nickname">Apelido</label>
+           <input type="text" name="Nickname" id="nicknameInput">
+
+           <label for="email">Email</label>
+           <input type="email" name="email" id="emailInput">
+
+           <label for="password">Senha</label>
+           <input type="password" name="password" id="passwordInput">
+           <button id="viewPassword"></button>
+        </div>
+
+        <div class="DownSide">
+            <input type="checkbox" name="PoliPrivAgree" id="PPA">
+            <label for="PoliPrivAgree">Eu concordo com a <a href="#" id="linkPP">Política de Privacidade</a>.</label>
+            <button>Cadastrar-se</button>
+        </div>
+    </form>
 </body>
 </html>
