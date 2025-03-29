@@ -18,3 +18,8 @@
   font-weight: 300;
   font-style: normal;
 }
+
+//CORES
+#5E4B8A - Roxo
+#5D00FD - Violeta
+#CDB73A - Amarelo

@@ -110,8 +110,9 @@ body {
 }
 
 #logo {
-    height: 10vh;
+    height: 14vh;
     margin-left: 1vw;
+    margin-top: 3vh;
 }
 
 #navNew {
@@ -135,7 +136,7 @@ body {
     align-items: center;
     height: 10vh;
     width: 50%;
-    gap: 1vw;
+    gap: 0.2vw;
 }
 
 #rightSide {
