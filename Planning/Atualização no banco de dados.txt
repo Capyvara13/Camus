@@ -1,0 +1,30 @@
+# Necessidade de atualizaçao do banco de dados
+
+Tabela users:
+
+password VARCHAR(25) NOT NULL: Este é o ponto mais crítico. Nunca armazene senhas em texto plano (como VARCHAR). Isso é uma falha grave de segurança. Senhas devem ser hasheadas usando um algoritmo seguro (como bcrypt, Argon2, ou scrypt) antes de serem armazenadas. O campo no banco deve guardar o hash da senha, que geralmente é mais longo.
+Recomendação: Mude o tipo para algo como VARCHAR(255) (o tamanho exato depende do algoritmo de hash escolhido) e certifique-se de que sua aplicação gere e verifique hashes de senha, não a senha original.
+email VARCHAR(50) UNIQUE NOT NULL: Embora VARCHAR(50) funcione para muitos emails, o padrão RFC permite emails mais longos. Para garantir compatibilidade, talvez VARCHAR(100) ou até VARCHAR(254) seja mais seguro.
+user_level INT UNSIGNED: Perfeito. Se você souber que os níveis serão poucos (ex: 0 a 255), poderia usar TINYINT UNSIGNED para economizar um pouco de espaço, mas INT UNSIGNED é seguro.
+Tabela articles:
+
+article_text VARCHAR(2000) NOT NULL: VARCHAR(2000) pode ser muito limitado para o corpo de um artigo. Textos podem facilmente exceder 2000 caracteres.
+Recomendação: Considere usar o tipo TEXT (até ~65 mil caracteres), MEDIUMTEXT (até ~16 milhões) ou LONGTEXT (até ~4 bilhões), dependendo do tamanho máximo esperado para os artigos. TEXT costuma ser um bom começo.
+abstract VARCHAR(1000) NOT NULL: Similar ao article_text, 1000 caracteres pode ser pouco para um resumo.
+Recomendação: Avalie aumentar o limite ou usar TEXT.
+gender VARCHAR(100) NOT NULL: O nome "gender" pode ser um pouco ambíguo (pode significar gênero textual ou gênero do autor). Pelo comentário ("Gênero do texto"), parece ser gênero textual (ex: 'Ficção', 'Notícia', 'Artigo Científico'). Se houver uma lista predefinida de gêneros, pode ser interessante criar uma tabela separada genres e usar uma chave estrangeira aqui (genre_id INT UNSIGNED) para melhor normalização e consistência.
+creation_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP: O tipo DATE armazena apenas a data (YYYY-MM-DD), descartando a hora. DEFAULT CURRENT_TIMESTAMP gera data e hora. Ao inserir, a hora será perdida.
+Recomendação: Se você precisa saber quando no dia o artigo foi criado, use TIMESTAMP ou DATETIME em vez de DATE. TIMESTAMP DEFAULT CURRENT_TIMESTAMP é comum para registrar o momento exato da criação.
+FOREIGN KEY (author_id) REFERENCES users(id_users) ON DELETE CASCADE: A cláusula ON DELETE CASCADE significa que, se um usuário for excluído, todos os seus artigos também serão excluídos automaticamente. Tenha certeza de que este é o comportamento desejado. Pode ser perigoso e levar à perda de dados.
+Alternativas:
+ON DELETE RESTRICT ou ON DELETE NO ACTION: Impede a exclusão de um usuário se ele tiver artigos associados.
+ON DELETE SET NULL: Define author_id como NULL se o usuário for excluído (você precisaria permitir NULL na coluna author_id, o que talvez não faça sentido aqui).
+Deixar a lógica de exclusão para a sua aplicação (ex: arquivar artigos antes de excluir o usuário).
+Tabela comments:
+
+Falta a ligação com o Artigo: Este é outro ponto crítico. A tabela comments não tem nenhuma coluna que indique a qual artigo o comentário pertence. Sem isso, você não sabe onde o comentário foi feito.
+Recomendação: Adicione uma coluna como article_id INT UNSIGNED NOT NULL e uma chave estrangeira correspondente: FOREIGN KEY (article_id) REFERENCES articles(id_articles) ON DELETE CASCADE. Neste caso, ON DELETE CASCADE pode fazer sentido (se um artigo for excluído, seus comentários provavelmente devem ser excluídos também).
+comment_text VARCHAR(1000) NOT NULL: Assim como nos artigos, 1000 caracteres pode ser pouco para comentários mais longos.
+Recomendação: Considere usar TEXT ou aumentar o VARCHAR.
+comment_like e comment_deslike: Os nomes estão funcionais, mas talvez likes_count e dislikes_count fossem um pouco mais descritivos. Além disso, "deslike" não é uma palavra padrão em inglês (o correto seria "dislike"). Se você estiver usando termos em inglês, considere comment_dislikes. Se for usar português, talvez curtidas e nao_curtidas. Manter a consistência no idioma dos nomes das colunas é bom.
+FOREIGN KEY (writer_id) REFERENCES users(id_users) ON DELETE CASCADE: Mesma observação da tabela articles. Excluir um usuário excluirá todos os seus comentários. Avalie se é o comportamento ideal. ON DELETE SET NULL (permitindo writer_id nulo) ou ON DELETE RESTRICT podem ser alternativas mais seguras.

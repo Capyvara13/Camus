@@ -1,0 +1,36 @@
+CREATE DATABASE Camus;
+USE Camus;
+
+CREATE TABLE `users` (
+    `id_users` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `nick` VARCHAR(50) UNIQUE NOT NULL,
+    `password` VARCHAR(25) NOT NULL,
+    `email` VARCHAR(50) UNIQUE NOT NULL,
+    `user_level` INT UNSIGNED, -- Nível do usuário.
+    `followers` INT UNSIGNED NOT NULL DEFAULT 0,
+    `created_at`TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `articles` (
+    `id_articles` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(100) NOT NULL,
+    `article_text` VARCHAR(2000) NOT NULL,
+    `gender` VARCHAR(100) NOT NULL, -- Gênero do texto
+    `abstract` VARCHAR(1000) NOT NULL, -- Resumo
+    `author_id` INT UNSIGNED NOT NULL,
+    `creation_date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `language` VARCHAR(40) NOT NULL, -- Idioma em que o texto foi produzido
+    `likes` INT UNSIGNED NOT NULL DEFAULT 0,
+    `views` INT UNSIGNED NOT NULL DEFAULT 0,
+    FOREIGN KEY (author_id) REFERENCES users(id_users) ON DELETE CASCADE
+);
+
+CREATE TABLE `comments` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `writer_id` INT UNSIGNED NOT NULL,
+    `comment_text` VARCHAR(1000) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `comment_like`INT UNSIGNED NOT NULL DEFAULT 0,
+    `comment_deslike` INT UNSIGNED NOT NULL DEFAULT 0,
+    FOREIGN KEY (writer_id) REFERENCES users(id_users) ON DELETE CASCADE
+);
