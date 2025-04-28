@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Irish+Grover&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F0F0;
+    transition: 0.3s;
+}
+
+/*Menu*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#camusIcon {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#camusIcon img {
+    height: 13vh;
+    margin-left: 1vw;
+}
+
+#menuButtons {
+    /*Right side of the menu*/
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 10vh;
+    gap: 1vw;
+}
+
+#menuButtons a {
+    margin-right: 1vw;
+}
+
+.menuTextButton {
+    color: #6F6F6F;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3.5vh;
+    cursor: pointer;
+    width: 5vw;
+    text-decoration: none;
+}
+
+.menuTextButton:hover {
+    transition: 0.29s;
+    color: #5D00FD;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+#loginButton {
+    color: #ffffff;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #5E4B8A;
+    border: none;
+    border-radius: 0.6vw;
+    font-size: 4vh;
+    cursor: pointer;
+    width: 8vw;
+    height: 6vh;
+}
+
+#loginButton:hover {
+    background-color: #5D00FD;
+    transition: 0.29s;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+#textSide {
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+#textSide h1 {
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 8vh;
+    margin-right: 15vw;
+}
+
+#textSide p {
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    width: 80%;
+    color: #6F6F6F;
+    font-size: 3vh;
+}
+
+#textSide button {
+    color: #ffffff;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #5E4B8A;
+    border: none;
+    border-radius: 0.6vw;
+    font-size: 4vh;
+    cursor: pointer;
+    width: 15vw;
+    height: 6vh;
+}
+
+#textSide button:hover {
+    background-color: #5D00FD;
+    transition: 0.29s;
+}
+
+#img {
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img img {
+    width: 90%;
+    height: 95%;
+}
+
+#accessibility {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+    height: 8vh;
+    width: 8vh;
+    background-color: #000000;
+    border: #000000 solid;
+    border-radius: 50%;
+    background-image: url(../img/LandingPageImage/accessibilityButton.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#menuButtonMobile {
+    position: fixed;
+    top: -200vh;
+    right: -200vw;
+}
+
+@media screen and (max-width: 930px) {
+    #menuButtonMobile {
+        height: 8vh;
+        width: 8vh;
+        position: fixed;
+        border-radius: 50%;
+        top: 1vh;
+        right: 2vw;
+        background-color: #cfcfcf;
+        box-shadow: #00000037 0.3vh 0.1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7vh;
+        flex-direction: column;
+    }
+
+    .bars {
+        width: 2em;
+        height: 0.3em;
+        border-radius: 1vw;
+        background-color: #000000;
+    }
+
+    #camusIcon {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    #menuButtons {
+        /*Right side of the menu*/
+        width: 100vw;
+        position: fixed;
+        top: -200vh;
+        /*If actived this will be "0vh"*/
+        background-color: #D9D9D9;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        gap: 4vh;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menuButtons a {
+        margin: 0;
+        width: 18vw;
+        font-size: 8vh;
+    }
+
+    #loginButton {
+        font-size: 10vh;
+        width: 32vw;
+        height: 14vh;
+        border-radius: 2vw;
+        position: relative;
+        right: 7.5vw;
+    }
+
+    #textSide button {
+        font-size: 4vh;
+        width: 20vw;
+        height: 6vh;
+    }
+    #img  {
+        width: 50%;
+        height: 90vh;
+    }
+    #img img {
+        height: 75%;
+        width: 90%;
+    }
+    #textSide h1 {
+        font-family: "Inria Serif", serif;
+        font-weight: bold;
+        font-style: normal;
+        font-size: 6vh;
+        margin-right: 15vw;
+    }
+}
+
+@media screen and (max-width: 685px) {
+    section {
+        flex-direction: column;
+    }
+    #textSide {
+        width: 100vw;
+        height: 40vh;
+    }
+    #textSide button {
+        font-size: 4vh;
+        width: 25vw;
+        height: 6vh;
+    }
+    
+    #textSide h1 {
+        font-family: "Inria Serif", serif;
+        font-weight: bold;
+        font-style: normal;
+        font-size: 6vh;
+        margin-right: 45vw;
+    }
+    #img  {
+        width: 100vw;
+        height: 100%;
+    }
+    #img img {
+        height: 70%;
+        width: 70%;
+    }
+}

@@ -26,3 +26,4 @@
 #F0F0F0 - Branco acinzentado (lightmode background)
 
 #04132e- Azul (darkmode background)
+#356e7b - Azul claro (Extra color)
