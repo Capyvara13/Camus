@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Irish+Grover&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titleStyle {
+    color: #CDB73A;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.textDefaultStyle {
+    color: #000000;
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    background-color: #F0F0F0;
+    transition: 0.3s;
+}
+
+nav {
+    background-color: #dedede;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#CamusIcon {
+    width: 50%;
+    height: 10vh;
+    background-image: url(../img/Icon/Full_Icon.png);
+    background-size: contain;
+    background-position: start;
+    background-repeat: no-repeat;
+    background-position-x: 2vw;
+}
+
+#menuButtonsDiv {
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menuButtons {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1vw;
+}
+
+.menuBnoB {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5vh;
+}
+
+#login {
+    background-color: #5E4B8A;
+    color: #F0F0F0;
+    font-weight: bold;
+    height: 6vh;
+    width: 6vw;
+    font-size: 3vh;
+    border: none;
+    border-radius: 06vw;
+    cursor: pointer;
+}
+
+#sub {
+    background-color: #5D00FD;
+    color: #F0F0F0;
+    font-weight: bold;
+    margin-right: 2vw;
+    font-size: 3vh;
+    height: 6vh;
+    width: 11vw;
+    border: none;
+    border-radius: 06vw;
+    cursor: pointer;
+}
+
+.menuBnoB:hover {
+    color: #5D00FD;
+    cursor: pointer;
+    transition: 0.12s ease-out;
+}
